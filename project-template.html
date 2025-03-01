@@ -33,72 +33,114 @@
     <div class="container">
       <h1 class="project-title">Project Name</h1>
       
-      <section class="project-slider">
-        <!-- Image slider will be implemented with JavaScript -->
-        <div class="slider-container">
-          <img src="https://via.placeholder.com/800x400" alt="Project Image 1" class="slider-image">
-          <img src="https://via.placeholder.com/800x400" alt="Project Image 2" class="slider-image">
-          <img src="https://via.placeholder.com/800x400" alt="Project Image 3" class="slider-image">
-        </div>
-        <button class="slider-btn prev">&lt;</button>
-        <button class="slider-btn next">&gt;</button>
-      </section>
-
-      <section class="project-about">
-        <h2>About the Project</h2>
-        <p>Describe your project here. What was the goal? What problem does it solve? Provide an overview of the project and its significance.</p>
-      </section>
-
-      <section class="project-features">
-        <h2>Key Features</h2>
-        <ul>
-          <li>Feature 1: Description of the feature</li>
-          <li>Feature 2: Description of the feature</li>
-          <li>Feature 3: Description of the feature</li>
-          <li>Feature 4: Description of the feature</li>
-        </ul>
-      </section>
-
-      <section class="project-tools">
-        <h2>Programs Used</h2>
-        <div class="tools-grid">
-          <div class="tool-item">
-            <i class="fab fa-html5"></i>
-            <span>HTML5</span>
+      <section class="project-hero">
+        <div class="project-slider">
+          <div class="slider-container">
+            <img src="https://via.placeholder.com/1200x600" alt="Project Image 1" class="slider-image">
+            <img src="https://via.placeholder.com/1200x600" alt="Project Image 2" class="slider-image">
+            <img src="https://via.placeholder.com/1200x600" alt="Project Image 3" class="slider-image">
           </div>
-          <div class="tool-item">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS3</span>
-          </div>
-          <div class="tool-item">
-            <i class="fab fa-js"></i>
-            <span>JavaScript</span>
-          </div>
-          <!-- Add more tools as needed -->
+          <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
         </div>
       </section>
 
-      <section class="project-team">
-        <h2>Team</h2>
-        <div class="team-members">
-          <div class="team-member">
-            <img src="https://via.placeholder.com/100" alt="Team Member 1">
-            <h3>Team Member 1</h3>
-            <p>Role: Developer</p>
+      <div class="project-content">
+        <section class="project-about">
+          <h2>About the Project</h2>
+          <p>Describe your project here. What was the goal? What problem does it solve? Provide an overview of the project and its significance. This is where you can go into detail about the project's background, challenges, and your approach to solving them.</p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul>
+            <li>
+              <i class="fas fa-star"></i>
+              <div>
+                <h3>Feature 1</h3>
+                <p>Description of the feature and its importance to the project.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-rocket"></i>
+              <div>
+                <h3>Feature 2</h3>
+                <p>Description of the feature and its importance to the project.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-cog"></i>
+              <div>
+                <h3>Feature 3</h3>
+                <p>Description of the feature and its importance to the project.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-lightbulb"></i>
+              <div>
+                <h3>Feature 4</h3>
+                <p>Description of the feature and its importance to the project.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tools">
+          <h2>Technologies Used</h2>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tool-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tool-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="tool-item">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="tool-item">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="tool-item">
+              <i class="fas fa-database"></i>
+              <span>MongoDB</span>
+            </div>
           </div>
-          <div class="team-member">
-            <img src="https://via.placeholder.com/100" alt="Team Member 2">
-            <h3>Team Member 2</h3>
-            <p>Role: Designer</p>
+        </section>
+
+        <section class="project-team">
+          <h2>Team</h2>
+          <div class="team-members">
+            <div class="team-member">
+              <img src="https://via.placeholder.com/150" alt="Team Member 1">
+              <h3>John Doe</h3>
+              <p>Lead Developer</p>
+            </div>
+            <div class="team-member">
+              <img src="https://via.placeholder.com/150" alt="Team Member 2">
+              <h3>Jane Smith</h3>
+              <p>UI/UX Designer</p>
+            </div>
+            <div class="team-member">
+              <img src="https://via.placeholder.com/150" alt="Team Member 3">
+              <h3>Mike Johnson</h3>
+              <p>Backend Developer</p>
+            </div>
           </div>
-          <!-- Add more team members as needed -->
-        </div>
-      </section>
+        </section>
+      </div>
 
       <div class="project-navigation">
-        <a href="#" class="btn secondary prev-project">Previous Project</a>
+        <a href="#" class="btn secondary prev-project"><i class="fas fa-arrow-left"></i> Previous Project</a>
         <a href="index.html#projects" class="btn primary">Back to Projects</a>
-        <a href="#" class="btn secondary next-project">Next Project</a>
+        <a href="#" class="btn secondary next-project">Next Project <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </main>

@@ -1,163 +1,73 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Create stars for background
-  function createStars() {
-    const starsContainer = document.getElementById("stars-container")
-    const starCount = 200
+// ... (previous JavaScript code) ...
 
-    for (let i = 0; i < starCount; i++) {
-      const star = document.createElement("div")
-      const size = Math.random() * 2
+// Image Slider
+const sliderContainer = document.querySelector(".slider-container")
+const sliderImages = document.querySelectorAll(".slider-image")
+const prevBtn = document.querySelector(".slider-btn.prev")
+const nextBtn = document.querySelector(".slider-btn.next")
+let currentSlide = 0
 
-      star.style.width = `${size}px`
-      star.style.height = `${size}px`
-      star.style.position = "absolute"
-      star.style.left = `${Math.random() * 100}%`
-      star.style.top = `${Math.random() * 100}%`
-      star.style.background = i % 20 === 0 ? "#ff3a3a" : "#fff"
-      star.style.borderRadius = "50%"
-      star.style.opacity = Math.random()
-      star.style.boxShadow = i % 20 === 0 ? "0 0 10px #ff3a3a" : "none"
+function showSlide(index) {
+  sliderContainer.style.transform = `translateX(-${index * 100}%)`
+}
 
-      // Add twinkling animation with random delay
-      star.style.animation = `twinkle ${Math.random() * 5 + 3}s infinite ${Math.random() * 5}s`
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % sliderImages.length
+  showSlide(currentSlide)
+}
 
-      starsContainer.appendChild(star)
-    }
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + sliderImages.length) % sliderImages.length
+  showSlide(currentSlide)
+}
 
-    // Add CSS for twinkling animation
-    const style = document.createElement("style")
-    style.textContent = `
-      @keyframes twinkle {
-        0% { opacity: 0.2; }
-        50% { opacity: 1; }
-        100% { opacity: 0.2; }
-      }
-    `
-    document.head.appendChild(style)
+if (prevBtn && nextBtn) {
+  prevBtn.addEventListener("click", prevSlide)
+  nextBtn.addEventListener("click", nextSlide)
+}
+
+// Initialize the slider
+showSlide(currentSlide)
+
+// Automatic slide change
+setInterval(nextSlide, 5000)
+
+// Project Navigation
+const prevProjectBtn = document.querySelector(".prev-project")
+const nextProjectBtn = document.querySelector(".next-project")
+
+// You'll need to replace these with your actual project pages
+const projectPages = ["project1.html", "project2.html", "project3.html"]
+
+function getCurrentProjectIndex() {
+  const currentPage = window.location.pathname.split("/").pop()
+  return projectPages.indexOf(currentPage)
+}
+
+function updateProjectNavigation() {
+  const currentIndex = getCurrentProjectIndex()
+
+  if (prevProjectBtn) {
+    prevProjectBtn.href = projectPages[(currentIndex - 1 + projectPages.length) % projectPages.length]
   }
 
-  createStars()
+  if (nextProjectBtn) {
+    nextProjectBtn.href = projectPages[(currentIndex + 1) % projectPages.length]
+  }
+}
 
-  // Parallax effect for stars
-  window.addEventListener("mousemove", (e) => {
-    const stars = document.querySelectorAll("#stars-container div")
-    const mouseX = e.clientX / window.innerWidth
-    const mouseY = e.clientY / window.innerHeight
+updateProjectNavigation()
 
-    stars.forEach((star, index) => {
-      if (index % 10 === 0) {
-        // Only apply to some stars for performance
-        const depth = Math.random() * 0.5
-        const moveX = (mouseX - 0.5) * depth * 20
-        const moveY = (mouseY - 0.5) * depth * 20
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault()
 
-        star.style.transform = `translate(${moveX}px, ${moveY}px)`
-      }
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
     })
   })
-
-  // Mobile Navigation Toggle
-  const hamburger = document.querySelector(".hamburger")
-  const navLinks = document.querySelector(".nav-links")
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active")
-      hamburger.classList.toggle("active")
-    })
-  }
-
-  // Close mobile menu when clicking on a nav link
-  const navItems = document.querySelectorAll(".nav-links a")
-
-  navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (navLinks.classList.contains("active")) {
-        navLinks.classList.remove("active")
-        hamburger.classList.remove("active")
-      }
-    })
-  })
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-
-      const targetId = this.getAttribute("href")
-      const targetElement = document.querySelector(targetId)
-
-      if (targetElement) {
-        const headerHeight = document.querySelector("header").offsetHeight
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        })
-      }
-    })
-  })
-
-  // Form submission handling
-  const contactForm = document.getElementById("contact-form")
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-
-      // In a real implementation, you would send the form data to a server
-      // For GitHub Pages, you might use a service like Formspree
-
-      const formData = new FormData(contactForm)
-      const formValues = Object.fromEntries(formData.entries())
-
-      console.log("Form submitted:", formValues)
-
-      // Show success message
-      alert("Thank you for your message! I will get back to you soon.")
-
-      // Reset form
-      contactForm.reset()
-    })
-  }
-
-  // Add active class to nav links on scroll
-  const sections = document.querySelectorAll("section")
-
-  function highlightNavOnScroll() {
-    const scrollPosition = window.scrollY
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100
-      const sectionHeight = section.offsetHeight
-      const sectionId = section.getAttribute("id")
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        document.querySelector(`.nav-links a[href="#${sectionId}"]`)?.classList.add("active")
-      } else {
-        document.querySelector(`.nav-links a[href="#${sectionId}"]`)?.classList.remove("active")
-      }
-    })
-  }
-
-  window.addEventListener("scroll", highlightNavOnScroll)
-
-  // Add scroll animation for elements
-  function revealOnScroll() {
-    const elements = document.querySelectorAll(".project-card, .skill-category, .tool-item")
-    const windowHeight = window.innerHeight
-
-    elements.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top
-
-      if (elementTop < windowHeight - 100) {
-        element.classList.add("visible")
-      }
-    })
-  }
-
-  window.addEventListener("scroll", revealOnScroll)
-  revealOnScroll() // Initial check
 })
+
+// ... (rest of the JavaScript code) ...
 
