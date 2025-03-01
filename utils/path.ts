@@ -1,11 +1,8 @@
 export const getBasePath = () => {
-  if (process.env.NODE_ENV === "production") {
-    return "" // No basePath needed for username.github.io
-  }
-  return ""
+  return "" // No base path needed for username.github.io
 }
 
 export const getImagePath = (path: string) => {
-  return `.${path}`
+  return path // Use direct paths since we're in root
 }
 

@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  distDir: 'docs', // Change output directory to 'docs'
+  // Remove distDir to output to the root
   images: {
     unoptimized: true,
   },
-  basePath: '', // No basePath needed for username.github.io
+  basePath: '',
   assetPrefix: './', // Use relative paths for assets
   trailingSlash: true,
 }
