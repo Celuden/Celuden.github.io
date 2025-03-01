@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Celuden</title>
+  <title>Celuden | Space Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div id="stars-container"></div>
+  
   <header>
     <div class="container">
       <nav>
-        <div class="logo">Celuden</div>
+        <div class="logo">Celuden<span class="logo-dot"></span></div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#tools">Tools</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
           <span></span>
@@ -31,14 +32,19 @@
   <section id="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Hi, I'm <span class="highlight">Celuden</span></h1>
-        <h2>Developer & Designer</h2>
-        <p>I build things for the web and beyond.</p>
+        <div class="glitch-container">
+          <h1 class="glitch" data-text="Celuden">Celuden</h1>
+        </div>
+        <h2>Explorer of the <span class="highlight">Digital Universe</span></h2>
+        <p>Creating stellar experiences across the web and beyond</p>
         <div class="cta-buttons">
           <a href="#projects" class="btn primary">View My Work</a>
-          <a href="#contact" class="btn secondary">Get In Touch</a>
+          <a href="#about" class="btn secondary">Discover More</a>
         </div>
       </div>
+    </div>
+    <div class="orbit-container">
+      <div class="orbit"></div>
     </div>
   </section>
 
@@ -47,11 +53,13 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>Hello! I'm a passionate developer focused on creating elegant, efficient solutions to complex problems. With a background in [your background], I combine technical expertise with creative thinking.</p>
-          <p>When I'm not coding, you can find me [your hobbies/interests]. I'm always looking to learn new technologies and improve my skills.</p>
+          <p>Hello! I'm a passionate developer navigating through the vast digital cosmos. With a background in [your background], I create solutions that bridge the gap between imagination and technology.</p>
+          <p>When I'm not coding, you can find me [your hobbies/interests]. I'm constantly exploring new technologies and pushing the boundaries of what's possible.</p>
         </div>
         <div class="about-image">
-          <img src="https://via.placeholder.com/300" alt="Profile picture">
+          <div class="image-frame">
+            <img src="https://via.placeholder.com/300" alt="Profile picture">
+          </div>
         </div>
       </div>
     </div>
@@ -62,7 +70,10 @@
       <h2 class="section-title">Skills</h2>
       <div class="skills-container">
         <div class="skill-category">
-          <h3>Frontend</h3>
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>Frontend</h3>
+          </div>
           <ul class="skill-list">
             <li>HTML5</li>
             <li>CSS3</li>
@@ -72,7 +83,10 @@
           </ul>
         </div>
         <div class="skill-category">
-          <h3>Backend</h3>
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
+            <h3>Backend</h3>
+          </div>
           <ul class="skill-list">
             <li>Node.js</li>
             <li>Express</li>
@@ -82,7 +96,10 @@
           </ul>
         </div>
         <div class="skill-category">
-          <h3>Other</h3>
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fas fa-tools"></i></div>
+            <h3>Other</h3>
+          </div>
           <ul class="skill-list">
             <li>Git</li>
             <li>UI/UX Design</li>
@@ -103,6 +120,12 @@
         <div class="project-card">
           <div class="project-image">
             <img src="https://via.placeholder.com/600x400" alt="Project 1">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
           </div>
           <div class="project-info">
             <h3>Project Name</h3>
@@ -112,10 +135,6 @@
               <span>CSS</span>
               <span>JavaScript</span>
             </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a>
-            </div>
           </div>
         </div>
         
@@ -123,6 +142,12 @@
         <div class="project-card">
           <div class="project-image">
             <img src="https://via.placeholder.com/600x400" alt="Project 2">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
           </div>
           <div class="project-info">
             <h3>Project Name</h3>
@@ -132,10 +157,6 @@
               <span>Node.js</span>
               <span>MongoDB</span>
             </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a>
-            </div>
           </div>
         </div>
         
@@ -143,6 +164,12 @@
         <div class="project-card">
           <div class="project-image">
             <img src="https://via.placeholder.com/600x400" alt="Project 3">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
           </div>
           <div class="project-info">
             <h3>Project Name</h3>
@@ -151,10 +178,6 @@
               <span>Python</span>
               <span>Flask</span>
               <span>SQL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live</a>
             </div>
           </div>
         </div>
@@ -197,39 +220,6 @@
         <div class="tool-item">
           <i class="fas fa-terminal"></i>
           <span>Terminal</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <p>I'm currently open to new opportunities and collaborations. Feel free to reach out if you'd like to work together or just say hello!</p>
-          <div class="contact-links">
-            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> your.email@example.com</a>
-            <a href="https://github.com/celuden" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> github.com/celuden</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> linkedin.com/in/yourusername</a>
-          </div>
-        </div>
-        <div class="contact-form">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn primary">Send Message</button>
-          </form>
         </div>
       </div>
     </div>

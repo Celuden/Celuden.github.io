@@ -1,4 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Create stars for background
+  function createStars() {
+    const starsContainer = document.getElementById("stars-container")
+    const starCount = 200
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div")
+      const size = Math.random() * 2
+
+      star.style.width = `${size}px`
+      star.style.height = `${size}px`
+      star.style.position = "absolute"
+      star.style.left = `${Math.random() * 100}%`
+      star.style.top = `${Math.random() * 100}%`
+      star.style.background = i % 20 === 0 ? "#ff3a3a" : "#fff"
+      star.style.borderRadius = "50%"
+      star.style.opacity = Math.random()
+      star.style.boxShadow = i % 20 === 0 ? "0 0 10px #ff3a3a" : "none"
+
+      // Add twinkling animation with random delay
+      star.style.animation = `twinkle ${Math.random() * 5 + 3}s infinite ${Math.random() * 5}s`
+
+      starsContainer.appendChild(star)
+    }
+
+    // Add CSS for twinkling animation
+    const style = document.createElement("style")
+    style.textContent = `
+      @keyframes twinkle {
+        0% { opacity: 0.2; }
+        50% { opacity: 1; }
+        100% { opacity: 0.2; }
+      }
+    `
+    document.head.appendChild(style)
+  }
+
+  createStars()
+
+  // Parallax effect for stars
+  window.addEventListener("mousemove", (e) => {
+    const stars = document.querySelectorAll("#stars-container div")
+    const mouseX = e.clientX / window.innerWidth
+    const mouseY = e.clientY / window.innerHeight
+
+    stars.forEach((star, index) => {
+      if (index % 10 === 0) {
+        // Only apply to some stars for performance
+        const depth = Math.random() * 0.5
+        const moveX = (mouseX - 0.5) * depth * 20
+        const moveY = (mouseY - 0.5) * depth * 20
+
+        star.style.transform = `translate(${moveX}px, ${moveY}px)`
+      }
+    })
+  })
+
   // Mobile Navigation Toggle
   const hamburger = document.querySelector(".hamburger")
   const navLinks = document.querySelector(".nav-links")
