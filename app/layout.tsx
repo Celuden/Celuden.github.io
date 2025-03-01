@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "A showcase of my projects and skills",
-  metadataBase: new URL("https://yourusername.github.io/portfolio"), // Replace with your username and repo name
+  metadataBase: new URL("https://celuden.github.io"), // Updated URL
     generator: 'v0.dev'
 }
 
