@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Deeper, more vibrant red */
+    --primary: 0 100% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 270 50% 60%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 20% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 100% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 20% 20%;
+    --input: 0 20% 20%;
+    --ring: 0 100% 45%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(to bottom right, hsl(0, 0%, 5%), hsl(0, 30%, 8%), hsl(0, 20%, 5%), hsl(0, 0%, 3%));
+    min-height: 100vh;
+  }
+}
+
+.diagonal-section {
+  position: relative;
+  padding: 6rem 0;
+  margin: 4rem 0;
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+  background: linear-gradient(135deg, hsl(0, 30%, 8%) 0%, hsl(0, 20%, 12%) 100%);
+}
+
+.diagonal-section-reverse {
+  position: relative;
+  padding: 6rem 0;
+  margin: 4rem 0;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+  background: linear-gradient(225deg, hsl(0, 30%, 8%) 0%, hsl(0, 20%, 12%) 100%);
+}
+
+.project-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, hsl(0, 100%, 50%, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover::before {
+  transform: translateX(100%);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px -5px hsl(0, 100%, 50%, 0.2), 0 0 30px -10px hsl(270, 50%, 60%, 0.3), 0 0 40px -15px
+    hsl(0, 100%, 50%, 0.1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image {
+  transition: transform 0.5s ease;
+}
+
+.glow-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, hsl(0, 100%, 50%), hsl(0, 100%, 30%), hsl(270, 50%, 60%));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(0, 100%, 60%), hsl(0, 100%, 45%), hsl(270, 50%, 60%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(to right, hsl(0, 100%, 50%, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(0, 100%, 50%, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.hero-pattern {
+  background: radial-gradient(circle at 50% 50%, hsl(0, 100%, 50%, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(0, 100%, 50%, 0.1) 0%, transparent 40%);
+}
+
+.red-highlight {
+  position: relative;
+}
+
+.red-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, hsl(0, 100%, 50%, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.red-highlight:hover::after {
+  opacity: 1;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.rotate-slow {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Red tint overlay for images */
+.red-tint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, hsl(0, 100%, 50%, 0.2), transparent);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.red-tint:hover::before {
+  opacity: 1;
+}
+
+/* Red border glow */
+.red-border-glow {
+  position: relative;
+}
+
+.red-border-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, hsl(0, 100%, 50%), transparent, hsl(0, 100%, 50%));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.red-border-glow:hover::after {
+  opacity: 1;
+}
+
