@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, Star, Code, Boxes } from "lucide-react"
+import { getImagePath } from "@/utils/path"
 
 export default function Home() {
   return (
@@ -92,7 +93,7 @@ export default function Home() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
                 <div className="relative z-10 floating">
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
+                    src={getImagePath("/placeholder.svg?height=600&width=600") || "/placeholder.svg"}
                     alt="Profile"
                     width={600}
                     height={600}

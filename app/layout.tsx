@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "A showcase of my projects and skills",
+  metadataBase: new URL("https://yourusername.github.io/portfolio"), // Replace with your username and repo name
     generator: 'v0.dev'
 }
 
@@ -18,10 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head>
-        {/* Add base tag for GitHub Pages */}
-        <base href={process.env.NODE_ENV === "production" ? "/your-repo-name/" : "/"} />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
