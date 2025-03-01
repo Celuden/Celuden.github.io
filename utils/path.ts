@@ -6,6 +6,6 @@ export const getBasePath = () => {
 }
 
 export const getImagePath = (path: string) => {
-  return `${getBasePath()}${path}`
+  return `.${path}`
 }
 
