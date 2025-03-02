@@ -848,15 +848,15 @@ nav {
   color: white;
 }
 
-/* Tools Section */
-#tools {
+/* software Section */
+#software {
   padding: 8rem 0;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
 }
 
-#tools::before {
+#software::before {
   content: "";
   position: absolute;
   top: 0;
@@ -867,7 +867,7 @@ nav {
   z-index: 1;
 }
 
-.tools-grid {
+.software-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 2rem;
@@ -875,7 +875,7 @@ nav {
   z-index: 2;
 }
 
-.tool-item {
+.software-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -890,7 +890,7 @@ nav {
   overflow: hidden;
 }
 
-.tool-item::before {
+.software-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -903,33 +903,33 @@ nav {
   transition: transform 0.3s ease;
 }
 
-.tool-item:hover {
+.software-item:hover {
   transform: translateY(-10px) rotate(3deg);
   box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
   background: linear-gradient(135deg, var(--card-bg), var(--card-hover));
 }
 
-.tool-item:hover::before {
+.software-item:hover::before {
   transform: scaleX(1);
 }
 
-.tool-item i {
+.software-item i {
   font-size: 2.5rem;
   color: var(--primary-color);
   transition: var(--transition);
 }
 
-.tool-item:hover i {
+.software-item:hover i {
   animation: pulse 1.5s infinite;
 }
 
-.tool-item span {
+.software-item span {
   font-weight: 500;
   color: var(--text-muted);
   transition: var(--transition);
 }
 
-.tool-item:hover span {
+.software-item:hover span {
   color: var(--light-color);
 }
 
@@ -1048,7 +1048,7 @@ footer .container {
 
 .project-about,
 .project-features,
-.project-tools,
+.project-software,
 .project-team {
   background: rgba(26, 26, 31, 0.8);
   border-radius: 10px;
@@ -1059,7 +1059,7 @@ footer .container {
 
 .project-about:hover,
 .project-features:hover,
-.project-tools:hover,
+.project-software:hover,
 .project-team:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
@@ -1067,7 +1067,7 @@ footer .container {
 
 .project-about h2,
 .project-features h2,
-.project-tools h2,
+.project-software h2,
 .project-team h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -1078,7 +1078,7 @@ footer .container {
 
 .project-about h2::after,
 .project-features h2::after,
-.project-tools h2::after,
+.project-software h2::after,
 .project-team h2::after {
   content: "";
   position: absolute;
@@ -1119,13 +1119,13 @@ footer .container {
   color: var(--light-color);
 }
 
-.project-tools .tools-grid {
+.project-software .software-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1.5rem;
 }
 
-.project-tools .tool-item {
+.project-software .software-item {
   text-align: center;
   padding: 1rem;
   background: rgba(34, 34, 42, 0.6);
@@ -1133,13 +1133,13 @@ footer .container {
   transition: var(--transition);
 }
 
-.project-tools .tool-item:hover {
+.project-software .software-item:hover {
   transform: translateY(-5px);
   background: rgba(34, 34, 42, 0.8);
   box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
 }
 
-.project-tools .tool-item i {
+.project-software .software-item i {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
@@ -1320,7 +1320,7 @@ footer .container {
     gap: 1rem;
   }
 
-  .tools-grid {
+  .software-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
