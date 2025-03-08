@@ -1,5 +1,3 @@
-// ... (previous JavaScript code) ...
-
 // Image Slider
 const sliderContainer = document.querySelector(".slider-container")
 const sliderImages = document.querySelectorAll(".slider-image")
@@ -68,6 +66,4 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     })
   })
 })
-
-// ... (rest of the JavaScript code) ...
 

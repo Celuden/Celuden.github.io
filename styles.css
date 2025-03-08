@@ -676,7 +676,7 @@ nav {
 }
 
 .skill-list li:hover::before {
-  content: "🚀";
+  content: "🪭";
   animation: launch 1s ease-out;
 }
 
