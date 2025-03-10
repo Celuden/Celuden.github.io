@@ -28,14 +28,14 @@ if (prevBtn && nextBtn) {
 showSlide(currentSlide)
 
 // Automatic slide change
-setInterval(nextSlide, 5000)
+//setInterval(nextSlide, 5000)
 
 // Project Navigation
 const prevProjectBtn = document.querySelector(".prev-project")
 const nextProjectBtn = document.querySelector(".next-project")
 
 // You'll need to replace these with your actual project pages
-const projectPages = ["project1.html", "project2.html", "project3.html"]
+const projectPages = ["MarosMayhem.html", "project2.html", "project3.html"]
 
 function getCurrentProjectIndex() {
   const currentPage = window.location.pathname.split("/").pop()
