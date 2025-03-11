@@ -1040,6 +1040,10 @@ footer .container {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
+.project-title a {
+  color: var(--light-color);
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
