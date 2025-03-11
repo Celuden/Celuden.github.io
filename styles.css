@@ -722,6 +722,9 @@ nav {
 .project-image {
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-image img {
@@ -733,15 +736,24 @@ nav {
 
 .project-card:hover .project-image img {
   transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Make tags more visible on hover */
+.project-card:hover .project-tag {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .project-overlay {
   position: absolute;
+  bottom: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(139, 0, 0, 0.8), rgba(75, 0, 130, 0.8));
+  color: white;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -829,9 +841,30 @@ nav {
 }
 
 .project-tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 5px;
+}
+
+.project-tag {
+  background-color: rgba(139, 0, 0, 0.9);
+  color: var(--light-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+.project-tag:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
 }
 
 .project-tags span {
@@ -964,8 +997,33 @@ footer .container {
 }
 
 /* Project Page Styles */
+.project-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
 .project-page {
   padding: 6rem 0;
+}
+
+.project-page .project-tag {
+  background-color: rgba(139, 0, 0, 0.8);
+  color: var(--light-color);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.project-page .project-tag:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
 }
 
 .project-title {
@@ -993,19 +1051,31 @@ footer .container {
 .project-slider {
   position: relative;
   border-radius: 10px;
+  width: 100%;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
 }
 
 .slider-container {
   display: flex;
   transition: transform 0.5s ease;
+  width: 100;
 }
 
 .slider-image {
+  min-width: 100%;
   width: 100%;
+  flex: 0 0 100%;
   height: auto;
   object-fit: cover;
+}
+
+.slider-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 500px;
 }
 
 .slider-btn {
@@ -1024,6 +1094,8 @@ footer .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
 .slider-btn:hover {
@@ -1032,11 +1104,11 @@ footer .container {
 }
 
 .slider-btn.prev {
-  left: 1rem;
+  left: 10px;
 }
 
 .slider-btn.next {
-  right: 1rem;
+  right: 10px;
 }
 
 .project-content {
@@ -1089,7 +1161,12 @@ footer .container {
   background: var(--primary-gradient);
 }
 
-.project-about p,
+.project-about p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
 .project-features p {
   color: var(--text-muted);
   line-height: 1.8;
@@ -1305,6 +1382,32 @@ footer .container {
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid .project-card .project-tags {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Higher z-index to ensure they're above everything */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .projects-grid .project-card .project-tag {
+    background-color: rgba(139, 0, 0, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  /* Ensure project overlay doesn't hide tags */
+  .projects-grid .project-card .project-overlay {
+    z-index: 5; /* Lower z-index than tags */
   }
 
   footer .container {
