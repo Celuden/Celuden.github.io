@@ -198,6 +198,10 @@ nav {
   animation: pulse 2s infinite;
 }
 
+.logo a {
+  color: white;
+}
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 58, 58, 0.7);
@@ -848,11 +852,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  color: white;
 }
 
 .project-tag {
   background-color: rgba(139, 0, 0, 0.9);
-  color: var(--light-color);
+  color: white;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -868,8 +873,8 @@ nav {
 }
 
 .project-tags span {
-  background-color: rgba(255, 58, 58, 0.1);
-  color: var(--primary-color);
+  background-color: rgb(32, 32, 32);
+  color: rgb(216, 216, 216);
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
   font-size: 0.85rem;
