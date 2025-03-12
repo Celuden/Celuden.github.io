@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextProjectBtn = document.querySelector(".next-project")
 
   // You'll need to replace these with your actual project pages
-  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html"]
+  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "FlameNFizzle.html"]
 
   function getCurrentProjectIndex() {
     const currentPage = window.location.pathname.split("/").pop()
