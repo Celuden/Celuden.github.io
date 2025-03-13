@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextBtn = document.querySelector(".slider-btn.next")
   let currentSlide = 0
 
-  // Only initialize slider if elements exist
   if (sliderContainer && sliderImages.length > 0) {
     function showSlide(index) {
       sliderContainer.style.transform = `translateX(-${index * 100}%)`
@@ -27,20 +26,19 @@ document.addEventListener('DOMContentLoaded', function() {
       nextBtn.addEventListener("click", nextSlide)
     }
 
-    // Initialize the slider
+    // Initialize slider
     showSlide(currentSlide)
 
     // Automatic slide change
     //setInterval(nextSlide, 5000)
   }
 
-  // Rest of your existing script.js code...
   // Project Navigation
   const prevProjectBtn = document.querySelector(".prev-project")
   const nextProjectBtn = document.querySelector(".next-project")
 
-  // You'll need to replace these with your actual project pages
-  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "FlameNFizzle.html", "ChessBot.html"]
+  // Project Pages
+  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "FlameNFizzle.html", "ChessBot.html", "Portfolio.html"]
 
   function getCurrentProjectIndex() {
     const currentPage = window.location.pathname.split("/").pop()
