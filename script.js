@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextProjectBtn = document.querySelector(".next-project")
 
   // Project Pages
-  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "FlameNFizzle.html", "ChessBot.html", "Portfolio.html", "UnrealNiagaraVFX.html"]
+  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "FlameNFizzle.html", "ChessBot.html", "Portfolio.html", 
+    "UnrealNiagaraVFX.html", "UnrealEnvironments.html", "Houdini.html", "PBR.html"]
 
   function getCurrentProjectIndex() {
     const currentPage = window.location.pathname.split("/").pop()
