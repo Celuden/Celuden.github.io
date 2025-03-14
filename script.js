@@ -1,5 +1,5 @@
 // Image Slider
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", () => {
   const sliderContainer = document.querySelector(".slider-container")
   const sliderImages = document.querySelectorAll(".slider-image")
   const prevBtn = document.querySelector(".slider-btn.prev")
@@ -38,8 +38,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextProjectBtn = document.querySelector(".next-project")
 
   // Project Pages
-  const projectPages = ["MarosMayhem.html", "KnockOffHeroes.html", "FlameNFizzle.html", "ProjectSisyphos.html", "RealmOfUnrest.html", "ChessBot.html", "Portfolio.html", 
-    "UnrealNiagaraVFX.html", "UnrealEnvironments.html", "Houdini.html", "PBR.html"]
+  const projectPages = [
+    "MarosMayhem.html",
+    "KnockOffHeroes.html",
+    "FlameNFizzle.html",
+    "ProjectSisyphos.html",
+    "RealmOfUnrest.html",
+    "ChessBot.html",
+    "Portfolio.html",
+    "UnrealNiagaraVFX.html",
+    "UnrealEnvironments.html",
+    "Houdini.html",
+    "PBR.html",
+  ]
 
   function getCurrentProjectIndex() {
     const currentPage = window.location.pathname.split("/").pop()
@@ -60,6 +71,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateProjectNavigation()
 
+  // Burger menu functionality
+  const hamburger = document.querySelector(".hamburger")
+  const navLinks = document.querySelector(".nav-links")
+
+  // Toggle menu when clicking on hamburger
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active")
+    hamburger.classList.toggle("active")
+  })
+
+  // Close menu when clicking on a navigation link
+  const navLinksItems = document.querySelectorAll(".nav-links a")
+  navLinksItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active")
+      hamburger.classList.remove("active")
+    })
+  })
+
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -71,3 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 })
+
