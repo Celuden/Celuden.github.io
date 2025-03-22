@@ -1481,3 +1481,126 @@ footer .container {
   }
 }
 
+/* Project Filter Styles */
+.filter-container {
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.filter-toggle {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-toggle.active {
+  background: var(--primary-gradient);
+  color: white;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.filter-tag {
+  background-color: var(--card-bg);
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.filter-tag:hover {
+  background-color: var(--card-hover);
+  color: var(--light-color);
+  transform: translateY(-2px);
+}
+
+.filter-tag.active {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+
+.clear-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.clear-filters:hover {
+  color: var(--primary-color);
+}
+
+.older-projects-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.show-older-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.show-older-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden-counter {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  animation: fadeIn 0.3s ease;
+}
+
+.no-hidden-msg {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .filter-tags {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .older-projects-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .hidden-counter,
+  .no-hidden-msg {
+    margin-left: 0.5rem;
+  }
+}
+
