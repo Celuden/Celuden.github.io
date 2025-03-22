@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Bot | Alija Suljic</title>
+  <link rel="icon" href="../img/Pics/Ico_Celuden.ico">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script> $(function(){$("#footer").load("../footer.html");});</script> 
+</head>
+<body>
+  <div id="stars-container"></div>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><a href="../index.html">Alija Suljic</a><span class="logo-dot"></span></div>
+        <ul class="nav-links">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#software">Software</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <h1 class="project-title"><a href="https://lichess.org/@/FireflyLullaby">Chess Bot</a></h1>
+
+      <div class="project-tags-container">
+        <span class="project-tag">Programming</span>
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Algorithms</span>
+      </div>
+      
+      <section class="project-hero">
+        <div class="project-slider">
+          <div class="slider-container">
+            <div class="slider-image">
+              <img src="/img/Pics/Misc/ChessBot_Hero.png" alt="Chess Bot Hero image">
+            </div>
+            <div class="slider-image">
+              <img src="/img/Pics/Misc/ChessBot_Profile.png" alt="Image displaying the Bot's profile on Lichess">
+            </div>
+            <div class="slider-image">
+              <img src="/img/Pics/Misc/ChessBot_Code.png" alt="Code overview of how the bot functions, no details given">
+            </div>
+          </div>
+          <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+      <div class="project-content">
+        <section class="project-about">
+          <h2>Project Description</h2>
+          <p>
+            One task during my studies was the creation of a chess bot to compete in a local tournament between students to determine the best chess bot. We created a bot account on Lichess.com and programmed our bot using python.
+            During the tournament itself, my bot "FireflyLullaby" placed second with a strategy of stalling out games and playing quickly, so the game time will run out for the opposing bot.
+          </p>
+          <p>
+            While developing the bot itself, some algorithms such as Minimax or Alpha-Beta-Pruning were programmed from scratch so the runtime of the bot would be fitting for a chess bot. 
+            Different strategies such as the opening book were also implemented to mimic professional chess players which utilize statistical success of the first moves in a chess game.
+            My bot only predicted up to 5 turns to decide on which move is the best to stay within a thinking time limit of 3 seconds - a higher search depth would also have been possible to use at the cost of a higher runtime and requiring a higher thinking time limit to be fully utilized.
+          </p>
+          <p><a href="https://lichess.org/@/FireflyLullaby">Lichess Profile Link</a></p>
+        </section>
+
+        <section class="project-features">
+          <h2>Key Features</h2>
+          <ul>
+            <li>
+              <i class="fas fa-star"></i>
+              <div>
+                <h3>Chaos Bot</h3>
+                <p>A chess bot utilizing a chaos-driven strategy to outlast the opponents while also being able to punish reckless moves will put the challengers under pressure</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-khanda"></i>
+              <div>
+                <h3>Up To The Challenge</h3>
+                <p>The bot can be challenged at any times as long as I boot it up - so hit me up on Discord if you are willing to challenge the Firefly Lullaby</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-gear"></i>
+              <div>
+                <h3>Algorithmic Mayhem</h3>
+                <p>Utilizing high-level algorithms for a fast runtime is essential for any good chess bot to be able to look far into the future and predict moves even more precisely</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="project-tools">
+          <h2>Skills / Tools Used</h2>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <span>Python</span>
+            </div>
+            <div class="tool-item">
+              <span>Visual Studio Code</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-team">
+          <h2>Team</h2>
+          <div class="team-members">
+            <div class="team-member">
+              <img src="/img/Pics/Logo_Celuden.png" alt="Celuden's Logo, Alija Suljic's Logo">
+              <h3>Alija Suljic</h3>
+              <p>Developer</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="project-navigation">
+        <a href="#" class="btn secondary prev-project"><i class="fas fa-arrow-left"></i> Previous Project</a>
+        <a href="../index.html#projects" class="btn primary">Back to Projects</a>
+        <a href="#" class="btn secondary next-project">Next Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+
+  <script src="../script.js"></script>
+</body>
+</html>
+
