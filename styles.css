@@ -896,6 +896,39 @@ nav {
   color: white;
 }
 
+/* Add this new CSS for the project logo indicator */
+.project-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 6; /* Higher than overlay to ensure visibility */
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.project-card:hover .project-logo {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+}
+
+/* Ensure project overlay doesn't hide the logo */
+.project-overlay {
+  z-index: 5; /* Lower z-index than logo */
+}
+
 /* software Section */
 #software {
   padding: 8rem 0;
@@ -1580,8 +1613,14 @@ footer .container {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile Responsive Adjustments */
@@ -1591,13 +1630,13 @@ footer .container {
     overflow-y: auto;
     padding-right: 10px;
   }
-  
+
   .older-projects-container {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .hidden-counter,
   .no-hidden-msg {
     margin-left: 0.5rem;
