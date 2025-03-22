@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Check if this card matches the current filter
       const matchesFilter = selectedTags.length === 0 ||
-        selectedTags.some(tag => cardTags.includes(tag));
+        selectedTags.every(tag => cardTags.includes(tag));
 
       // Handle visibility based on whether it's an older project and matches filter
       if (card.classList.contains('older-project')) {
