@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectPages = [
     "TheDarkPlace.html",
     "TheStoryOfSoll.html",
+    "Knastbruch.html",
     "MarosMayhem.html",
     "KnockOffHeroes.html",
     "FlameNFizzle.html",
